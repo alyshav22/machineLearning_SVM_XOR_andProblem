@@ -1,0 +1,38 @@
+# Machine Learning with R - Week 5 Assignment 
+## by Alysha Velasquez
+
+**1)Install packages**
+
+```{r}
+library("e1071")
+?svm
+```
+
+**2) Create a 4,2 array with the inout values:**
+
+```{r}
+x<-array(data=c(0,0,1,1,0,1,0,1),dim=c(4,2))
+x
+```
+
+**3) Create a vector of factors(outputs for the input values)**
+```{r}
+y<-factor(c(0,1,1,0))
+```
+
+**4) Create the SVM model**
+```{r}
+model <- svm(x,y,type="C-classification")
+```
+
+**5) Display information about the created model**
+```{r}
+summary(model)
+print(model)
+```
+
+**6) See the SVM model predictions for the input values**
+```{r}
+predict(model,x)
+```
+

@@ -1,0 +1,43 @@
+# Machine Learning with R 
+## XOR Problem
+### by Alysha Velasquez
+
+**1)Install "e1071" package**
+
+**install.packages("e1071")**
+
+**2) Load "e1071" package and support vector machine**
+
+```{r}
+library("e1071")
+?svm
+```
+
+**3) Create a 4,2 array with the inout values:**
+
+```{r}
+x<-array(data=c(0,0,1,1,0,1,0,1),dim=c(4,2))
+x
+```
+
+**4) Create a vector of factors(outputs for the input values)**
+```{r}
+y<-factor(c(0,1,1,0))
+```
+
+**5) Create the SVM model**
+```{r}
+model <- svm(x,y,type="C-classification")
+```
+
+**6 Display information about the created model**
+```{r}
+summary(model)
+print(model)
+```
+
+**7) See the SVM model predictions for the input values**
+```{r}
+predict(model,x)
+```
+
